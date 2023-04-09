@@ -1,0 +1,26 @@
+.heading{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    padding: 2rem;
+}
+
+.info-div{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    font-size: 24px;
+}
+
+.info-main-div{
+    text-align: center;
+    margin: auto;
+}
+
+.info-image{
+    width: 50%;
+}
