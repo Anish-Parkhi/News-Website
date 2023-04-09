@@ -7,6 +7,8 @@ function Tech() {
   const[posts,setPosts] = useState(null)
   const[index,setIndex] = useState(null)
 
+
+  const key = process.env.REACT_APP_API_KEY
   const navigate = useNavigate()
 
   function handleClick(idx){
@@ -16,7 +18,7 @@ function Tech() {
 
   useEffect(()=>{
       axios
-          .get('https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=6ccf535a498841c7889f9f763d6beb6f')
+          .get(`https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=${key}`)
           .then(res=>{
               console.log(res.data.articles)
               setPosts(res.data.articles)

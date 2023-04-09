@@ -9,6 +9,8 @@ function Politics() {
 
   const navigate = useNavigate()
 
+  const key = process.env.REACT_APP_API_KEY
+
   function handleClick(idx){
       setIndex(idx)
       navigate('/moreInfo',{state:{posts,idx}})
@@ -16,7 +18,7 @@ function Politics() {
 
   useEffect(()=>{
       axios
-          .get('https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=6ccf535a498841c7889f9f763d6beb6f')
+          .get(`https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=${key}`)
           .then(res=>{
               console.log(res.data.articles)
               setPosts(res.data.articles)

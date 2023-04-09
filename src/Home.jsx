@@ -21,9 +21,11 @@ function Home() {
 
     const navigate = useNavigate()
 
+    const key = process.env.REACT_APP_API_KEY
+
     useEffect(()=>{
         axios
-        .get(`https://newsapi.org/v2/everything?q=${shodh}&apiKey=6ccf535a498841c7889f9f763d6beb6f`)
+        .get(`https://newsapi.org/v2/everything?q=${shodh}&apiKey=${key}`)
         .then(res => {
             setPosts(res.data.articles)
         })

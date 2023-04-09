@@ -14,9 +14,11 @@ function Buisness() {
       navigate('/moreInfo',{state:{posts,idx}})
   }
 
+  const key = process.env.REACT_APP_API_KEY
+
   useEffect(()=>{
       axios
-          .get('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=6ccf535a498841c7889f9f763d6beb6f')
+          .get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${key}`)
           .then(res=>{
               console.log(res.data.articles)
               setPosts(res.data.articles)
